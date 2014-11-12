@@ -48,6 +48,8 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      */
     public function setContainer(ContainerInterface $container = null)
     {
+        $this->abortIf(is_null($container), 'Requires DI container');
+
         $this->fs = $container->get('filesystem');
         $this->target = $container->getParameter('kernel.root_dir').'/../web/media/example/';
         $this->source = $container->get('kernel')->locateResource('@AnimeDbDevBundle/Resource/private/images/');
