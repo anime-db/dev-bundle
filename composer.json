@@ -23,6 +23,7 @@
 	"require" : {
 		"php" : ">=5.4.0",
 		"anime-db/anime-db" : "dev-master",
+		"anime-db/demo-bundle" : "dev-master",
 		"anime-db/item-folder-filler-bundle" : "dev-master",
 		"anime-db/world-art-filler-bundle" : "dev-master",
 		"anime-db/shikimori-filler-bundle" : "dev-master",
