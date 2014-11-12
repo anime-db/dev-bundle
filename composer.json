@@ -22,7 +22,14 @@
 	},
 	"require" : {
 		"php" : ">=5.4.0",
-		"anime-db/anime-db" : "*"
+		"anime-db/anime-db" : "dev-master",
+		"anime-db/item-folder-filler-bundle" : "dev-master",
+		"anime-db/world-art-filler-bundle" : "dev-master",
+		"anime-db/shikimori-filler-bundle" : "dev-master",
+		"anime-db/shikimori-new-items-widget-bundle" : "dev-master",
+		"anime-db/shikimori-related-items-widget-bundle" : "dev-master",
+		"anime-db/shikimori-similar-items-widget-bundle" : "dev-master",
+		"anime-db/ani-db-filler-bundle" : "dev-master"
 	},
 	"minimum-stability" : "dev"
 }
