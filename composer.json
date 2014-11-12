@@ -1,5 +1,5 @@
 {
-	"name" : "anime-db/dev",
+	"name" : "anime-db/dev-bundle",
 	"license" : "GPL-3.0",
 	"type" : "library",
 	"description" : "Set functions for developers",
@@ -17,7 +17,7 @@
 	],
 	"autoload" : {
 		"psr-4" : {
-			"AnimeDb\\Bundle\\Dev\\" : "src/"
+			"AnimeDb\\Bundle\\DevBundle\\" : "src/"
 		}
 	},
 	"require" : {
