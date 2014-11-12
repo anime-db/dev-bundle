@@ -11,8 +11,6 @@
 namespace AnimeDb\Bundle\DevBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use AnimeDb\Bundle\CatalogBundle\DependencyInjection\Compiler\PluginPass;
 
 /**
  * Bundle
