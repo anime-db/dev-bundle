@@ -23,7 +23,7 @@ use AnimeDb\Bundle\CatalogBundle\Entity\Source;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20141012160751 extends AbstractMigration implements ContainerAwareInterface
+class Version20141013152347 extends AbstractMigration implements ContainerAwareInterface
 {
     /**
      * Filesystem
