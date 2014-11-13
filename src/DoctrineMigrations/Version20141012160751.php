@@ -14,6 +14,7 @@ use Doctrine\DBAL\Migrations\AbstractMigration;
 use Doctrine\DBAL\Schema\Schema;
 use Symfony\Component\DependencyInjection\ContainerAwareInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
+use AnimeDb\Bundle\AppBundle\Util\Filesystem;
 use AnimeDb\Bundle\CatalogBundle\Entity\Storage;
 use AnimeDb\Bundle\CatalogBundle\Entity\Item;
 use AnimeDb\Bundle\CatalogBundle\Entity\Name;
@@ -75,8 +76,16 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
     {
         // copy images for example items
         $this->fs->mirror($this->source, $this->target);
-        $storage = $this->em->getRepository('AnimeDbCatalogBundle:Storage')->findBy([], [], 1);
 
+        // create storage
+        $storage = (new Storage())
+            ->setDescription('Storage on local computer')
+            ->setName('Local')
+            ->setPath(Filesystem::getUserHomeDir())
+            ->setType(Storage::TYPE_FOLDER);
+        $this->em->persist($storage);
+
+        // create items
         $this->persist($this->getItemOnePiece($storage));
         $this->persist($this->getItemSamuraiChamploo($storage));
         $this->persist($this->getItemFullmetalAlchemist($storage));
