@@ -88,6 +88,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
         $this->persist($this->getHellsing($storage));
         $this->persist($this->getGintama($storage));
         $this->persist($this->getBakuman($storage));
+        $this->persist($this->getTengenToppaGurrenLagann($storage));
         $this->em->flush();
     }
     /**
@@ -962,13 +963,13 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
     }
 
     /**
-     * Get Samurai Champloo item
+     * Get Tengen Toppa Gurren Lagann item
      *
      * @param \AnimeDb\Bundle\CatalogBundle\Entity\Storage $storage
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function _(Storage $storage)
+    protected function getTengenToppaGurrenLagann(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
