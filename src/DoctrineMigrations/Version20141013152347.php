@@ -88,7 +88,6 @@ class Version20141013152347 extends AbstractMigration implements ContainerAwareI
         // create items
         $this->persist($this->getItemSamuraiChamploo($storage));
         $this->persist($this->getItemFullmetalAlchemist($storage));
-        $this->persist($this->getItemSpiritedAway($storage));
         $this->persist($this->getItemGreatTeacherOnizuka($storage));
         $this->persist($this->getItemBeck($storage));
         $this->persist($this->getItemSamuraiXTrustAndBetrayal($storage));
@@ -366,53 +365,6 @@ class Version20141013152347 extends AbstractMigration implements ContainerAwareI
             ->addSource((new Source())->setUrl('http://www.fansubs.ru/base.php?id=124'))
             ->addSource((new Source())->setUrl('http://www.world-art.ru/animation/animation.php?id=2368'))
             ->addSource((new Source())->setUrl('http://shikimori.org/animes/121-fullmetal-alchemist'));
-    }
-
-    /**
-     * Get Spirited Away item
-     *
-     * @param \AnimeDb\Bundle\CatalogBundle\Entity\Storage $storage
-     *
-     * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
-     */
-    protected function getItemSpiritedAway(Storage $storage)
-    {
-        return (new Item())
-            ->setCountry($this->getCountry('JP'))
-            ->setCover('example/spirited-away.jpg')
-            ->setDatePremiere(new \DateTime('2001-07-20'))
-            ->setDuration(125)
-            ->setEpisodesNumber('1')
-            ->setName('Spirited Away')
-            ->setPath($storage->getPath().'Spirited Away (2001)'.DIRECTORY_SEPARATOR)
-            ->setStorage($storage)
-            ->setSummary(
-                'Маленькая Тихиро вместе с мамой и папой переезжают в новый дом. Заблудившись по дороге, они '
-                .'оказываются в странном пустынном городе, где их ждет великолепный пир. Родители с жадностью '
-                .'набрасываются на еду и к ужасу девочки превращаются в свиней, став пленниками злой колдуньи Юбабы, '
-                .'властительницы таинственного мира древних богов и могущественных духов. Теперь, оказавшись одна '
-                .'среди магических существ и загадочных видений, отважная Тихиро должна придумать, как избавить своих '
-                .'родителей от чар коварной старухи и спастись из пугающего царства призраков...'
-            )
-            ->setStudio($this->getStudio('Studio Ghibli'))
-            ->setType($this->getType('feature'))
-            ->addGenre($this->getGenre('Adventure'))
-            ->addGenre($this->getGenre('Drama'))
-            ->addGenre($this->getGenre('Fable'))
-            ->addName((new Name())->setName('Унесённые призраками'))
-            ->addName((new Name())->setName('Sen to Chihiro no Kamikakushi'))
-            ->addName((new Name())->setName('千と千尋の神隠し'))
-            ->addSource((new Source())->setUrl('http://www.animenewsnetwork.com/encyclopedia/anime.php?id=377'))
-            ->addSource((new Source())->setUrl('http://anidb.net/perl-bin/animedb.pl?show=anime&aid=112'))
-            ->addSource((new Source())->setUrl('http://www.allcinema.net/prog/show_c.php?num_c=163027'))
-            ->addSource((new Source())->setUrl('http://en.wikipedia.org/wiki/Spirited_Away'))
-            ->addSource((new Source())->setUrl('http://ru.wikipedia.org/wiki/%D0%A3%D0%BD%D0%B5%D1%81%D1%91%D0%BD%D0%BD%D1%8B%D0%B5_%D0%BF%D1%80%D0%B8%D0%B7%D1%80%D0%B0%D0%BA%D0%B0%D0%BC%D0%B8'))
-            ->addSource((new Source())->setUrl('http://ja.wikipedia.org/wiki/%E5%8D%83%E3%81%A8%E5%8D%83%E5%B0%8B%E3%81%AE%E7%A5%9E%E9%9A%A0%E3%81%97'))
-            ->addSource((new Source())->setUrl('http://oboi.kards.ru/?act=search&level=6&search_str=Spirited%20Away'))
-            ->addSource((new Source())->setUrl('http://www.fansubs.ru/base.php?id=368'))
-            ->addSource((new Source())->setUrl('http://uanime.org.ua/anime/38.html'))
-            ->addSource((new Source())->setUrl('http://www.world-art.ru/animation/animation.php?id=87'))
-            ->addSource((new Source())->setUrl('http://shikimori.org/animes/199-sen-to-chihiro-no-kamikakushi'));
     }
 
     /**
