@@ -86,7 +86,6 @@ class Version20141013152347 extends AbstractMigration implements ContainerAwareI
         $this->em->persist($storage);
 
         // create items
-        $this->persist($this->getItemOnePiece($storage));
         $this->persist($this->getItemSamuraiChamploo($storage));
         $this->persist($this->getItemFullmetalAlchemist($storage));
         $this->persist($this->getItemSpiritedAway($storage));
@@ -172,61 +171,6 @@ class Version20141013152347 extends AbstractMigration implements ContainerAwareI
     protected function getGenre($name)
     {
         return $this->em->getRepository('AnimeDbCatalogBundle:Genre')->findBy(['name' => $name]);
-    }
-
-    /**
-     * Get One Piece item
-     *
-     * @param \AnimeDb\Bundle\CatalogBundle\Entity\Storage $storage
-     *
-     * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
-     */
-    protected function getItemOnePiece(Storage $storage)
-    {
-        return (new Item())
-            ->setCountry($this->getCountry('JP'))
-            ->setCover('example/one-piece.jpg')
-            ->setDatePremiere(new \DateTime('1999-10-20'))
-            ->setDuration(25)
-            ->setEpisodesNumber('602+')
-            ->setFileInfo('+ 6 спэшлов')
-            ->setName('One Piece')
-            ->setPath($storage->getPath().'One Piece (2011) [TV]'.DIRECTORY_SEPARATOR)
-            ->setStorage($storage)
-            ->setSummary(
-                'Последние слова, произнесенные Королем Пиратов перед казнью, вдохновили многих: «Мои сокровища? Коли '
-                .'хотите, забирайте. Ищите – я их все оставил там!». Легендарная фраза Золотого Роджера ознаменовала '
-                .'начало Великой Эры Пиратов – тысячи людей в погоне за своими мечтами отправились на Гранд Лайн, '
-                .'самое опасное место в мире, желая стать обладателями мифических сокровищ... Но с каждым годом '
-                .'романтиков становилось все меньше, их постепенно вытесняли прагматичные пираты-разбойники, которым '
-                .'награбленное добро было куда ближе, чем какие-то «никчемные мечты». Но вот, одним прекрасным днем, '
-                .'семнадцатилетний Монки Д. Луффи исполнил заветную мечту детства - отправился в море. Его цель - ни '
-                .'много, ни мало стать новым Королем Пиратов. За достаточно короткий срок юному капитану удается '
-                .'собрать команду, состоящую из не менее амбициозных искателей приключений. И пусть ими движут '
-                .'совершенно разные устремления, главное, этим ребятам важны не столько деньги и слава, сколько куда '
-                .'более ценное – принципы и верность друзьям. И еще – служение Мечте. Что ж, пока по Гранд Лайн '
-                .'плавают такие люди, Великая Эра Пиратов всегда будет с нами!'
-            )
-            ->setStudio($this->getStudio('Toei Animation'))
-            ->setType($this->getType('tv'))
-            ->addGenre($this->getGenre('Adventure'))
-            ->addGenre($this->getGenre('Comedy'))
-            ->addGenre($this->getGenre('Shounen'))
-            ->addGenre($this->getGenre('Fantasy'))
-            ->addName((new Name())->setName('Ван-Пис'))
-            ->addName((new Name())->setName('Одним куском'))
-            ->addName((new Name())->setName('ワンピース'))
-            ->addSource((new Source())->setUrl('http://www.animenewsnetwork.com/encyclopedia/anime.php?id=836'))
-            ->addSource((new Source())->setUrl('http://anidb.net/perl-bin/animedb.pl?show=anime&aid=69'))
-            ->addSource((new Source())->setUrl('http://myanimelist.net/anime/21/'))
-            ->addSource((new Source())->setUrl('http://cal.syoboi.jp/tid/350/time'))
-            ->addSource((new Source())->setUrl('http://www.allcinema.net/prog/show_c.php?num_c=162790'))
-            ->addSource((new Source())->setUrl('http://en.wikipedia.org/wiki/One_Piece'))
-            ->addSource((new Source())->setUrl('http://ru.wikipedia.org/wiki/One_Piece'))
-            ->addSource((new Source())->setUrl('http://ja.wikipedia.org/wiki/ONE_PIECE_%28%E3%82%A2%E3%83%8B%E3%83%A1%29'))
-            ->addSource((new Source())->setUrl('http://www.fansubs.ru/base.php?id=731'))
-            ->addSource((new Source())->setUrl('http://www.world-art.ru/animation/animation.php?id=803'))
-            ->addSource((new Source())->setUrl('http://shikimori.org/animes/21-one-piece'));
     }
 
     /**
