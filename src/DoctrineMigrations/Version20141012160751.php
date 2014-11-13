@@ -77,18 +77,18 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
         $this->fs->mirror($this->source, $this->target);
         $storage = $this->em->getRepository('AnimeDbCatalogBundle:Storage')->findBy([], [], 1);
 
-        $this->persist($this->getOnePiece($storage));
-        $this->persist($this->getSamuraiChamploo($storage));
-        $this->persist($this->getFullmetalAlchemist($storage));
-        $this->persist($this->getSpiritedAway($storage));
-        $this->persist($this->getGreatTeacherOnizuka($storage));
-        $this->persist($this->getBeck($storage));
-        $this->persist($this->getSamuraiXTrustAndBetrayal($storage));
-        $this->persist($this->getMyNeighborTotoro($storage));
-        $this->persist($this->getHellsing($storage));
-        $this->persist($this->getGintama($storage));
-        $this->persist($this->getBakuman($storage));
-        $this->persist($this->getTengenToppaGurrenLagann($storage));
+        $this->persist($this->getItemOnePiece($storage));
+        $this->persist($this->getItemSamuraiChamploo($storage));
+        $this->persist($this->getItemFullmetalAlchemist($storage));
+        $this->persist($this->getItemSpiritedAway($storage));
+        $this->persist($this->getItemGreatTeacherOnizuka($storage));
+        $this->persist($this->getItemBeck($storage));
+        $this->persist($this->getItemSamuraiXTrustAndBetrayal($storage));
+        $this->persist($this->getItemMyNeighborTotoro($storage));
+        $this->persist($this->getItemHellsing($storage));
+        $this->persist($this->getItemGintama($storage));
+        $this->persist($this->getItemBakuman($storage));
+        $this->persist($this->getItemTengenToppaGurrenLagann($storage));
         $this->em->flush();
     }
     /**
@@ -172,7 +172,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function getOnePiece(Storage $storage)
+    protected function getItemOnePiece(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
@@ -227,7 +227,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function getSamuraiChamploo(Storage $storage)
+    protected function getItemSamuraiChamploo(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
@@ -315,7 +315,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function getFullmetalAlchemist(Storage $storage)
+    protected function getItemFullmetalAlchemist(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
@@ -422,7 +422,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function getSpiritedAway(Storage $storage)
+    protected function getItemSpiritedAway(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
@@ -469,7 +469,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function getGreatTeacherOnizuka(Storage $storage)
+    protected function getItemGreatTeacherOnizuka(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
@@ -561,7 +561,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function getBeck(Storage $storage)
+    protected function getItemBeck(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
@@ -650,7 +650,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function getSamuraiXTrustAndBetrayal(Storage $storage)
+    protected function getItemSamuraiXTrustAndBetrayal(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
@@ -709,7 +709,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function getMyNeighborTotoro(Storage $storage)
+    protected function getItemMyNeighborTotoro(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
@@ -760,7 +760,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function getHellsing(Storage $storage)
+    protected function getItemHellsing(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
@@ -830,7 +830,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function getGintama(Storage $storage)
+    protected function getItemGintama(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
@@ -887,7 +887,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function getBakuman(Storage $storage)
+    protected function getItemBakuman(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
@@ -969,7 +969,7 @@ class Version20141012160751 extends AbstractMigration implements ContainerAwareI
      *
      * @return \AnimeDb\Bundle\CatalogBundle\Entity\Item
      */
-    protected function getTengenToppaGurrenLagann(Storage $storage)
+    protected function getItemTengenToppaGurrenLagann(Storage $storage)
     {
         return (new Item())
             ->setCountry($this->getCountry('JP'))
